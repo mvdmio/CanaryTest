@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvdmio.CanaryTest", "mvdmio.CanaryTest\mvdmio.CanaryTest.csproj", "{D8F9134D-07D3-4E2B-8A2A-0A5CBF7C466A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvdmio.CanaryTest.Console", "mvdmio.CanaryTest.Console\mvdmio.CanaryTest.Console.csproj", "{A6939AE4-DAF9-4F12-B38D-05D85884CAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvdmio.CanaryTest.Web.Playwright", "mvdmio.CanaryTest.Web.Playwright\mvdmio.CanaryTest.Web.Playwright.csproj", "{B023B3B8-5B92-48EA-BDB7-8261C5DAEAFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvdmio.CanaryTest.UnitTests", "Tests\mvdmio.CanaryTest.UnitTests\mvdmio.CanaryTest.UnitTests.csproj", "{4C304F61-DBE7-4390-AA67-818AB2E7E547}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{2DF7162E-CE70-4DA7-A49C-26821E0E80A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +20,20 @@ Global
 		{D8F9134D-07D3-4E2B-8A2A-0A5CBF7C466A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F9134D-07D3-4E2B-8A2A-0A5CBF7C466A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8F9134D-07D3-4E2B-8A2A-0A5CBF7C466A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6939AE4-DAF9-4F12-B38D-05D85884CAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6939AE4-DAF9-4F12-B38D-05D85884CAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6939AE4-DAF9-4F12-B38D-05D85884CAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6939AE4-DAF9-4F12-B38D-05D85884CAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B023B3B8-5B92-48EA-BDB7-8261C5DAEAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B023B3B8-5B92-48EA-BDB7-8261C5DAEAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B023B3B8-5B92-48EA-BDB7-8261C5DAEAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B023B3B8-5B92-48EA-BDB7-8261C5DAEAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C304F61-DBE7-4390-AA67-818AB2E7E547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C304F61-DBE7-4390-AA67-818AB2E7E547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C304F61-DBE7-4390-AA67-818AB2E7E547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C304F61-DBE7-4390-AA67-818AB2E7E547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C304F61-DBE7-4390-AA67-818AB2E7E547} = {2DF7162E-CE70-4DA7-A49C-26821E0E80A1}
 	EndGlobalSection
 EndGlobal
