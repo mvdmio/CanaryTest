@@ -1,10 +1,19 @@
 ﻿using mvdmio.CanaryTest;
+using mvdmio.CanaryTest.Console;
 using mvdmio.CanaryTest.Web;
 using mvdmio.CanaryTest.Web.Playwright.Setup;
 
 WebCrawler? webCrawler = null;
 try
 {
+    var userSecrets = UserSecretsReader.Read<UserSecrets>("CanaryTest");
+
+    if (userSecrets is null)
+    {
+        Console.WriteLine("Could not find User Secrets. Aborting.");
+        return;
+    }
+    
     CanaryTest.Setup.WebCrawlWithPlaywright();
 
     Console.WriteLine("Initializing webcrawler");
@@ -12,10 +21,10 @@ try
     await webCrawler.Initialize(
         async interactor => {
             await interactor.OpenAndFollowRedirects(new Uri("https://inzameling.jewel.eu"));
-            await interactor.EnterText("txtUserName", "mvdmeer@jewelsoftware.com");
-            await interactor.EnterText("txtPassword", @".\private$\logmessage");
-            await interactor.Click("btnLogin");
-            await interactor.Click("Button1");
+            await interactor.EnterText("txtUserName", userSecrets.Username);
+            await interactor.EnterText("txtPassword", userSecrets.Password);
+            await interactor.Click("btnLogin"); // Redirects to the subscription picker page
+            await interactor.Click("Button1"); // Picks the first subscription in the list
         }
     );
     Console.WriteLine("Webcrawler initialized");
