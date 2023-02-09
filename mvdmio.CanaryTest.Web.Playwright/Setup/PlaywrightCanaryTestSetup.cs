@@ -2,8 +2,8 @@
 
 public static class PlaywrightCanaryTestSetup
 {
-    public static void WebCrawlWithPlaywright(this CanaryTestSetup setup)
+    public static void WebCrawlWithPlaywright(this CanaryTestSetup _)
     {
-        WebInteractorFactory.SetBuilder(() => new GoogleChromeWebInteractor());
+        WebInteractorFactory.SetBuilder(async () => await GoogleChromeWebInteractor.Build());
     }
 }

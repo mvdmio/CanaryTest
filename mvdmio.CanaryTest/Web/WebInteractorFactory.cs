@@ -4,18 +4,18 @@ namespace mvdmio.CanaryTest.Web;
 
 public static class WebInteractorFactory
 {
-    private static Func<IWebInteractor>? _builderDelegate;
+    private static Func<Task<IWebInteractor>>? _asyncBuilderDelegate;
     
-    public static void SetBuilder(Func<IWebInteractor> builderDelegate)
+    public static void SetBuilder(Func<Task<IWebInteractor>> asyncBuilderDelegate)
     {
-        _builderDelegate = builderDelegate;
+        _asyncBuilderDelegate = asyncBuilderDelegate;
     }
     
-    public static IWebInteractor Create()
+    public static async Task<IWebInteractor> Create()
     {
-        if (_builderDelegate is null)
+        if (_asyncBuilderDelegate is null)
             throw new InvalidOperationException("Builder Delegate has not been initialized yet.");
 
-        return _builderDelegate.Invoke();
+        return await _asyncBuilderDelegate.Invoke();
     }
 }
